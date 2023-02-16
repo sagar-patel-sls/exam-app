@@ -17,7 +17,7 @@ public class StudentsController : ControllerBase
         _service = service;
     }
 
-    [HttpGet]
+    [HttpGet("/students")]
     public IActionResult GetAll()
     {
         try
@@ -30,7 +30,7 @@ public class StudentsController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpGet("/students/get/{id}")]
     public IActionResult Get(int id)
     {
         try

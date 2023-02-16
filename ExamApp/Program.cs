@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ExamApp.Context;
+using ExamApp.Domain;
 using ExamApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,7 @@ public class Program
 
         builder.Services.AddControllers();
         builder.Services.AddTransient<IStudentsService, StudentsService>();
+        builder.Configuration.GetSection("ConnectionStrings").Get<ConnectionStrings>();
 
         var app = builder.Build();
 
